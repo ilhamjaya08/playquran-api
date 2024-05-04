@@ -1,6 +1,17 @@
 {
+  "name": "playquran-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "author": {
+    "name": "ilhamjaya08",
+    "github": "https://github.com/ilhamjaya08"
   },
   "dependencies": {
     "@hono/node-server": "^1.11.1",

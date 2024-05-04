@@ -1,5 +1,6 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
 
 const app = new Hono()
 
@@ -14,3 +15,5 @@ serve({
   fetch: app.fetch,
   port
 })
+
+export default handle(app)
