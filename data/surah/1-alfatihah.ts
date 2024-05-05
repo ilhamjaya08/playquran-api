@@ -1,8 +1,16 @@
-{
-    "surah": "Al-Fatihah",
+const alfatihah ={
+    "name": {
+        "main": "الفاتحة",
+        "id": "Al-Fatihah",
+        "en": "Al-Faatiha"
+        },
     "number": 1,
-    "ayat_count": 7,
-    "place": "Makkah",
+    "ayatCount": 7,
+    "manzil": {
+        "main": "مكية",
+        "id": "Makkiyah",
+        "en": "Meccan"
+    },
     "ayat": [
       {
         "ayat_id": 1,
@@ -103,4 +111,5 @@
         }
       }
     ]
-  }
+  };
+  export default alfatihah
