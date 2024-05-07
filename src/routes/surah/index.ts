@@ -1,20 +1,37 @@
 import { Hono } from "hono"
-import alfatihah from '../../../data/surah/1'
+
 const surah = new Hono().basePath('/surah')
 
-surah.get('/alfatihah',  (c) => {
-    return c.json(alfatihah)
-  })
+surah.get('/:sid', (c) => {
 
-surah.get('/:id', (c) => {
-
-  const id = c.req.param('id')
-  const surahFile = id + '.ts'
-  const surahData = require('../../../data/surah/' + surahFile)
+  const sid = c.req.param('sid')
+  const surahFile = sid + '.ts'
+  const surahModule = require('../../../data/surah/' + surahFile)
   return c.json({
     status: 200,
     message: 'Success to get surah data',
-    data: surahData
+    data: surahModule
+  })
+})
+
+surah.get('/:sid/:vid', (c) => {
+  const sid = c.req.param('sid')
+  const vid = c.req.param('vid')
+
+  const surahFile = sid + '.ts'
+  const surahModule = require('../../../data/surah/' + surahFile)
+  const surahData = surahModule.default
+  let verse;
+  for (const ayat of surahData.ayat) {
+    if (ayat.ayat_id === parseInt(vid)) {  // Parse vid as integer for comparison
+      verse = ayat;
+      break;
+    }
+  }
+
+  return c.json({
+    status: 200,
+    data: verse
   })
 })
 

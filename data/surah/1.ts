@@ -1,15 +1,15 @@
 const alfatihah ={
     "name": {
-        "main": "الفاتحة",
+        "ar": "الفاتحة",
         "id": "Al-Fatihah",
         "en": "Al-Faatiha"
         },
     "number": 1,
     "ayatCount": 7,
     "manzil": {
-        "main": "مكية",
-        "id": "Makkiyah",
-        "en": "Meccan"
+        "ar": "مدنية",
+        "id": "Madaniyyah",
+        "en": "Madaniyyah"
     },
     "ayat": [
       {
