@@ -7,7 +7,7 @@ If you want to contribute to this project, Make sure you have basic skills in th
 ## API Guide
 Use a Rest API Client like cURL, Thunder, or Postman.
 > Endpoint = http://api.playquran.blue
-- Get Surah data by surah id
+### • Get Surah data by surah id
 ```
 GET https://api.playquran.blue/surah/:sid
 ```
@@ -55,6 +55,37 @@ The response will be:
   }
 }
 ```
+
+### • Get Verse data by surah id  and verse id
+Method:
+```
+GET http://api.playquran.blue/surah/:sid/:vid
+```
+Example:
+```
+GET http://api.playquran.blue/surah/1/1
+```
+The response will be :
+```
+{
+  "status": 200,
+  "data": {
+    "ayat_id": 1,
+    "arab": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+    "translation": {
+      "id-ID": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang.",
+      "en-EN": "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
+      "fr-FR": "Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.",
+      "de-DE": "Im Namen Allahs, des Gnädigen, des Barmherzigen.",
+      "nl-NL": "In de naam van Allah, de Erbarmer, de Barmhartige.",
+      "it-IT": "Nel nome di Allah, il Compassionevole, il Misericordioso.",
+      "ko-KR": "아불라 이름으로, 그 자비로우신 자, 그 자비로우신 자의 이름으로.",
+      "ja-JP": "アッラーの御名において。慈悲深き御方、慈愛の主によります。"
+    }
+  }
+}
+```
+
 ## Development
 To run this API locally on your computer, run
 ```
